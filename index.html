@@ -416,11 +416,72 @@
 
     <!-- Contact Me Page -->
     <section id="contact-page">
-        <div>
-            <h2>Contact Me</h2>
-            <p>Have questions or want to work together? Feel free to reach out!</p>
+        <div class="contact-content w-full max-w-6xl mx-auto px-4">
+        <h2>Contact Me</h2>
+        <p class="mb-10">Have questions or want to work together? Feel free to reach out!</p>
+        
+        <div class="contact-grid">
+            <div class="contact-form-container">
+                <form id="contactForm" onsubmit="return validateForm(event)">
+                    <div class="form-group">
+                        <label for="name">Nama</label>
+                        <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Masukkan email Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Tujuan Menghubungi</label>
+                        <select id="subject" required>
+                            <option value="">Pilih tujuan</option>
+                            <option value="Kerja Sama">Kerja Sama</option>
+                            <option value="Pertanyaan">Pertanyaan</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" rows="4" placeholder="Tulis pesan Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button cta-primary w-full">Kirim Pesan</button>
+                </form>
+            </div>
+
+
+
+            <div class="contact-preview-container">
+    <div class="flex-column w-full">
+        <div class="preview-card preview-mini">
+            <span class="preview-tag">LIVE PREVIEW</span>
+            <div class="preview-content-grid">
+                <div class="preview-item">
+                    <small>Nama:</small>
+                    <p id="preview-name">-</p>
+                </div>
+                <div class="preview-item">
+                    <small>Email:</small>
+                    <p id="preview-email">-</p>
+                </div>
+                <div class="preview-item">
+                    <small>Tujuan:</small>
+                    <p id="preview-subject">-</p>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <div id="submitted-box" class="submitted-card hidden">
+            <h4>📩 Pesan Baru Diterima!</h4>
+            <div id="display-result"></div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+</section>
+    
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTopBtn" class="scroll-to-top" title="Go to top">
@@ -428,9 +489,41 @@
     </button>
 
     <!-- Footer Content -->
-    <footer>
-        <p class="text-center p-4">© 2026 Dini. All rights reserved.</p>
-    </footer>
+    <footer class="modern-footer">
+    <div class="footer-container max-w-6xl mx-auto px-4">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3 class="footer-logo">Dini<span>.</span></h3>
+                <p>Passionate about creating engaging experiences that can be beneficial to the general public.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home-page">Home</a></li>
+                    <li><a href="#portfolio-page">Portfolio</a></li>
+                    <li><a href="#my-profile-page">About Me</a></li>
+                    <li><a href="#contact-page">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Let's Connect</h4>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/dini-andriati-1b7524291/" target="_blank" title="LinkedIn">🔗</a>
+                    <a href="https://github.com/diniandriatii" target="_blank" title="GitHub">💻</a>
+                    <a href="https://www.youtube.com/@diniandriati3925" target="_blank" title="YouTube">📸</a>
+                    <a href="mailto:dini.andriatii@gmail.com" title="Email">✉️</a>
+                </div>
+                <p class="footer-email">hello@diniportfolio.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dini. All rights reserved. Made with ❤️</p>
+        </div>
+    </div>
+</footer>
 
     <!-- Javascript External -->
     <script src="js/script.js"></script>

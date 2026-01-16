@@ -786,3 +786,260 @@ footer {
         margin-top: 20px;
     }
 }
+
+
+/* Contact Page Custom Styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.contact-form-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200, 240, 220, 0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #c8f0dc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(200, 240, 220, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-family: inherit;
+}
+
+.contact-preview-container {
+    display: flex;
+    align-items: center;
+}
+
+.preview-card {
+    background: white;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.preview-tag {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #1a5f4a;
+    background: #c8f0dc;
+    padding: 4px 10px;
+    border-radius: 50px;
+}
+
+.preview-item {
+    margin-bottom: 15px;
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 8px;
+}
+
+.preview-item small {
+    color: #888;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.preview-item p {
+    color: #1a5f4a !important;
+    font-weight: 600;
+    margin: 0 !important;
+    word-break: break-all;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* Mengecilkan Live Preview */
+.preview-mini {
+    padding: 15px 20px !important;
+    margin-bottom: 20px;
+    transform: scale(0.95);
+}
+
+.preview-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Kotak Hasil Submit */
+.submitted-card {
+    background: #c8f0dc;
+    border-radius: 15px;
+    padding: 20px;
+    border-left: 5px solid #1a5f4a;
+    animation: slideDown 0.4s ease-out;
+}
+
+.submitted-card h4 {
+    color: #1a5f4a;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.result-text {
+    font-size: 13px;
+    color: #333;
+    line-height: 1.4;
+    background: rgba(255,255,255,0.5);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.hidden { display: none; }
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.flex-column { display: flex; flex-direction: column; width: 100%; }
+
+
+/* Modern Footer Styling */
+.modern-footer {
+    background: linear-gradient(135deg, #164a3a 0%, #1a5f4a 100%);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 70px 0 30px 0;
+    border-top: 1px solid rgba(200, 240, 220, 0.1);
+    margin-top: 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-logo span {
+    color: #c8f0dc;
+}
+
+.footer-about p {
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.footer-links h4, .footer-contact h4 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+    color: #c8f0dc;
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+.social-icons a:hover {
+    background: #c8f0dc;
+    transform: translateY(-5px);
+}
+
+.footer-email {
+    font-size: 14px;
+    color: #c8f0dc;
+    font-weight: 500;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-links ul li a:hover {
+        padding-left: 0;
+    }
+}

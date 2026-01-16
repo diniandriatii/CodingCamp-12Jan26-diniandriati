@@ -62,4 +62,105 @@ scrollToTopBtn.addEventListener('click', () => {
 });
 
 // Placeholder for form validation function
-function validateForm() { }
+function validateForm() { 
+    // Live Preview Logic
+const form = document.getElementById('contactForm');
+const inputs = ['name', 'email', 'subject', 'message'];
+
+inputs.forEach(id => {
+    const inputEl = document.getElementById(id);
+    const previewEl = document.getElementById(`preview-${id}`);
+    
+    inputEl.addEventListener('input', () => {
+        previewEl.textContent = inputEl.value || '-';
+    });
+});
+
+// Form Validation
+function validateForm(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    
+    if (name.length < 3) {
+        alert('Nama harus minimal 3 karakter');
+        return false;
+    }
+    
+    // Basic Email Validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert('Mohon masukkan format email yang valid');
+        return false;
+    }
+
+    alert(`Terima kasih ${name}! Pesan Anda telah terkirim (Simulasi).`);
+    form.reset();
+    
+    // Reset Previews
+    inputs.forEach(id => {
+        document.getElementById(`preview-${id}`).textContent = '-';
+    });
+    
+    return true;
+}
+}
+
+// Fungsi untuk sinkronisasi input dengan Live Preview
+function initLivePreview() {
+    const inputs = [
+        { inputId: 'name', previewId: 'preview-name' },
+        { inputId: 'email', previewId: 'preview-email' },
+        { inputId: 'subject', previewId: 'preview-subject' },
+        { inputId: 'message', previewId: 'preview-message' }
+    ];
+
+    inputs.forEach(item => {
+        const inputElement = document.getElementById(item.inputId);
+        const previewElement = document.getElementById(item.previewId);
+
+        if (inputElement && previewElement) {
+            inputElement.addEventListener('input', () => {
+                previewElement.textContent = inputElement.value || "-";
+            });
+        }
+    });
+}
+
+// Jalankan fungsi setelah DOM dimuat
+document.addEventListener('DOMContentLoaded', initLivePreview);
+
+// Fungsi Validasi Form (Sesuai permintaan sebelumnya)
+function validateForm(event) {
+    event.preventDefault();
+    
+    // Ambil Data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Tampilkan di Box Hasil Submit
+    const submittedBox = document.getElementById('submitted-box');
+    const displayResult = document.getElementById('display-result');
+    
+    submittedBox.classList.remove('hidden');
+    displayResult.innerHTML = `
+        <div class="result-text">
+            <strong>Dari:</strong> ${name} (${email})<br>
+            <strong>Hal:</strong> ${subject}<br>
+            <strong>Pesan:</strong> ${message}
+        </div>
+    `;
+
+    // Alert Sukses
+    alert("Pesan Anda telah berhasil disimpan di bawah!");
+
+    // Reset Form dan Preview
+    event.target.reset();
+    ['preview-name', 'preview-email', 'preview-subject', 'preview-message'].forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.textContent = "-";
+    });
+}
