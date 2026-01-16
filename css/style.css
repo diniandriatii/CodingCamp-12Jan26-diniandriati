@@ -130,7 +130,8 @@ nav a:hover {
 
 footer {
     animation: fadeUp 0.5s ease-in;
-    background: linear-gradient(135deg, #1a5f4a 0%, #2d7a6e 100%);
-    border-top: 2px solid rgba(200, 240, 220, 0.2);
-    color: rgba(255, 255, 255, 0.8);
+    background: linear-gradient(135deg, #2d7a6e 0%, #3d5a6c 100%);
+    border-top: 1px solid rgba(200, 240, 220, 0.3);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
 }

@@ -12,10 +12,10 @@ function welcomeMessage() {
     modalContent.className = 'modal-content';
     
     const heading = document.createElement('h2');
-    heading.textContent = 'Selamat Datang!';
+    heading.textContent = 'Welcome to My Portfolio!';
     
     const message = document.createElement('p');
-    message.textContent = 'Selamat datang di website portofolio saya. Semoga Anda menikmati kunjungan Anda!';
+    message.textContent = 'Explore my projects and skills.';
     
     modalContent.appendChild(heading);
     modalContent.appendChild(message);
