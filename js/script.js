@@ -2,16 +2,37 @@
 welcomeMessage();
 
 function welcomeMessage() {
-    // Prompt the user for their name
-    let userResponse = prompt("What is your name?");
-
-    // If userResponse is null or empty, set a default name
-    if (userResponse === null || userResponse.trim() === "") {
-        userResponse = "Guest";
+    // Check if we're on the portfolio page
+    const portfolioPage = document.getElementById("portfolio-page");
+    
+    if (portfolioPage) {
+        // Create modal backdrop
+        const backdrop = document.createElement('div');
+        backdrop.className = 'modal-backdrop';
+        backdrop.id = 'welcome-modal';
+        
+        // Create modal content
+        const modalContent = document.createElement('div');
+        modalContent.className = 'modal-content';
+        
+        const heading = document.createElement('h2');
+        heading.textContent = 'Selamat Datang';
+        
+        const message = document.createElement('p');
+        message.textContent = 'Selamat datang di halaman Portfolio kami!';
+        
+        modalContent.appendChild(heading);
+        modalContent.appendChild(message);
+        backdrop.appendChild(modalContent);
+        
+        // Add modal to page
+        document.body.appendChild(backdrop);
+        
+        // Remove modal after 3 seconds
+        setTimeout(() => {
+            backdrop.remove();
+        }, 3000);
     }
-
-    // Display the welcome message in the element with id "welcome-speech"
-    document.getElementById("welcome-speech").innerText = `Welcome, ${userResponse}! to Yama Website.`;
 }
 
 // Placeholder for form validation function
