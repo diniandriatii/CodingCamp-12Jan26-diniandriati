@@ -1,21 +1,41 @@
 .logo {
-    height: 75px; /* Set a fixed height */
-    width: 75px; /* Make it square to form perfect circle */
-    border-radius: 50%;
-    display: block;
-    object-fit: cover;
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1a5f4a 0%, #2d7a6e 50%, #3d5a6c 100%);
+    min-height: 100vh;
 }
 
 .main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    display: none;
 }
 
 nav {
     display: flex;
-    gap: 10px;
+    gap: 30px;
+    padding: 30px 50px;
+    background: rgba(26, 95, 74, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    border: none;
+    padding: 0;
+    background: none;
+}
+
+nav a:hover {
+    color: #ffffff;
 }
 
 /* Modal Styles */
@@ -71,8 +91,8 @@ nav {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #0066cc;
-    color: white;
+    background-color: rgba(200, 240, 220, 0.9);
+    color: #1a5f4a;
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -88,7 +108,7 @@ nav {
 }
 
 .scroll-to-top:hover {
-    background-color: #0052a3;
+    background-color: rgba(200, 240, 220, 1);
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
@@ -110,4 +130,7 @@ nav {
 
 footer {
     animation: fadeUp 0.5s ease-in;
+    background: linear-gradient(135deg, #1a5f4a 0%, #2d7a6e 100%);
+    border-top: 2px solid rgba(200, 240, 220, 0.2);
+    color: rgba(255, 255, 255, 0.8);
 }
