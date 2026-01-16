@@ -7,27 +7,40 @@ function welcomeMessage() {
     backdrop.className = 'modal-backdrop';
     backdrop.id = 'welcome-modal';
     
-    // Create modal content
-    const modalContent = document.createElement('div');
-    modalContent.className = 'modal-content';
+    // Create modal container
+    const modalContainer = document.createElement('div');
+    modalContainer.className = 'modal-container-simple';
     
-    const heading = document.createElement('h2');
-    heading.textContent = 'Welcome to My Portfolio!';
+    // Create main heading
+    const mainHeading = document.createElement('h2');
+    mainHeading.className = 'modal-main-heading';
+    mainHeading.textContent = 'Welcome to My Portfolio!';
     
-    const message = document.createElement('p');
-    message.textContent = 'Explore my projects and skills.';
+    // Create close button
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'modal-close-btn';
+    closeBtn.innerHTML = '×';
+    closeBtn.onclick = () => backdrop.remove();
     
-    modalContent.appendChild(heading);
-    modalContent.appendChild(message);
-    backdrop.appendChild(modalContent);
+    // Assemble modal
+    modalContainer.appendChild(mainHeading);
+    modalContainer.appendChild(closeBtn);
+    backdrop.appendChild(modalContainer);
     
     // Add modal to page
     document.body.appendChild(backdrop);
     
-    // Remove modal after 3 seconds
-    setTimeout(() => {
+    // Remove modal after 5 seconds or on click outside
+    const autoCloseTimer = setTimeout(() => {
         backdrop.remove();
-    }, 3000);
+    }, 5000);
+    
+    backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) {
+            clearTimeout(autoCloseTimer);
+            backdrop.remove();
+        }
+    });
 }
 
 // Scroll to Top functionality
