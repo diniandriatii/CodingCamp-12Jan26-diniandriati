@@ -1,12 +1,9 @@
 .logo {
     height: 75px; /* Set a fixed height */
-    width: 100%;
-    max-width: 75px;
-    background-color: lightgray;
+    width: 75px; /* Make it square to form perfect circle */
     border-radius: 50%;
-    background-image: url(https://picsum.photos/200);
-    background-size: cover;
     display: block;
+    object-fit: cover;
 }
 
 .main-header {
